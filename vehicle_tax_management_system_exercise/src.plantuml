@@ -1,0 +1,32 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+entity AnnualTaxReport << record >>
+class Car
+enum FuelType << enumeration >>
+class Main
+class Motorcycle
+entity OwnershipResult << record >>
+class Person
+class Validation
+class Vehicle
+class VehicleTaxSystem
+
+Car              "1" *-[#595959,plain]-> "fuelType\n1" FuelType         
+Car               -[#000082,plain]-^  Vehicle          
+Main              -[#595959,dashed]->  Car              : "«create»"
+Main              -[#595959,dashed]->  Motorcycle       : "«create»"
+Main             "1" *-[#595959,plain]-> "system\n1" VehicleTaxSystem 
+Main              -[#595959,dashed]->  VehicleTaxSystem : "«create»"
+Motorcycle        -[#000082,plain]-^  Vehicle          
+Person           "1" *-[#595959,plain]-> "vehicles\n*" Vehicle          
+Vehicle          "1" *-[#595959,plain]-> "owner\n1" Person           
+VehicleTaxSystem  -[#595959,dashed]->  AnnualTaxReport  : "«create»"
+VehicleTaxSystem  -[#595959,dashed]->  OwnershipResult  : "«create»"
+VehicleTaxSystem "1" *-[#595959,plain]-> "persons\n*" Person           
+VehicleTaxSystem  -[#595959,dashed]->  Person           : "«create»"
+VehicleTaxSystem "1" *-[#595959,plain]-> "vehicles\n*" Vehicle          
+@enduml
