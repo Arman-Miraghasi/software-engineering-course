@@ -1,3 +1,15 @@
+# Company Salary
+
+A simple Java program that calculates the salaries of a company's workers.
+
+Each worker has a base salary and a complement. The program calculates the total salary for each worker and the total amount paid by the company.
+
+## How to Run
+
+Run `Main.java` to display the salary information.
+
+---
+
 # Company Salary additional questions:
 
 ## 1- Is your design ready to easily accept changes in how to calculate the total salary? for example for calculating the total salary taking into account taxes.
